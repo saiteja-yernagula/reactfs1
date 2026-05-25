@@ -1,0 +1,43 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    padding:40px;
+    background:rgb(87, 4, 164);
+    color:white;
+}
+ section{
+    display:flex;
+    padding:40px;
+    background:blueviolet;
+     background:rgb(87, 4, 164);
+    color:white; 
+    }
+
+    section>div{
+        flex-basis:50%;
+    }
+    img{
+        width:100%;
+        height:100%;
+    }
+
+    /* card styles */
+    .doctorcard{
+        border:1px solid black;
+        border-radius:10px;
+        padding:20px;
+        
+        /* width:400px; */
+    }
+    .doctorcard>button{
+        width:100%;
+        background:transparent;
+        padding:10px;
+        margin:10px 0px;
+    }
+    .doctorcontainer{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:10px;
+    }
+  
