@@ -41,3 +41,18 @@ nav{
         gap:10px;
     }
   
+
+    /* form styling */
+    .formcontainer{
+        border:2px solid black;
+        width:70%;
+        border-radius:10px;
+        margin:auto;
+        padding:30px;
+    }
+    .textfield{
+        display:block;
+        width:90%;
+        padding:10px;
+        margin:20px;
+    }

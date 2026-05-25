@@ -3,9 +3,19 @@ import Section from "./components/Section"
 
 import Doctorcard from "./components/Doctorcard"
 import Adddoctor from "./components/Adddoctor"
+// import { useState } from "react"
 function App() {
+
+  // let [count,setCount]=useState(0)
+  // function addcount(){
+  //   setCount(count+1)
+  //   console.log(count)
+  // }
+
   return (
     <div>
+      {/* {count}
+      <button  onClick={addcount}>click to increase</button> */}
       <Navbar/>
       <Section/>
       <div className='doctorcontainer'>
@@ -17,7 +27,7 @@ function App() {
       <Doctorcard name='Deekshit' specialization='cardio' gender='male'/>
       
       </div>
-      <Adddoctor/>
+     <Adddoctor/>
     </div>
   )
 }
