@@ -7,11 +7,15 @@ function Adddoctor() {
     const [gender,setGender]=useState('')
     const [specialization,setSpecialization]=useState('')
     const [salary,setSalary]=useState('')
+
+    const [newdoctor,setNewdoctor]=useState(null)
+
     function handleform(e){
         e.preventDefault()
         const formdata={
           name,age,gender,specialization,salary
         }
+      setNewdoctor(formdata)
         console.log(formdata)
         setName('')
         setAge('')
@@ -46,7 +50,7 @@ function Adddoctor() {
         <button type='submit'>ADD</button>
     </form> 
 
-    <Home/>
+    <Home newdoctor={newdoctor}/>
     </div>
   )
 }

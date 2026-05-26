@@ -35,7 +35,6 @@ function Home() {
                 }
             ]
             setDoctors(data)
-        
 
      }
     useEffect(()=>{
