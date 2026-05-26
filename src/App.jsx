@@ -4,6 +4,7 @@ import Section from "./components/Section"
 import Doctorcard from "./components/Doctorcard"
 import Adddoctor from "./components/Adddoctor"
 // import { useState } from "react"
+// import { useEffect } from "react"
 function App() {
 
   // let [count,setCount]=useState(0)
@@ -11,11 +12,14 @@ function App() {
   //   setCount(count+1)
   //   console.log(count)
   // }
+  // useEffect(()=>{
+  //   console.log('useeffect is running')
+  // },[count])
 
   return (
     <div>
-      {/* {count}
-      <button  onClick={addcount}>click to increase</button> */}
+       {/* {count}
+      <button  onClick={addcount}>click to increase</button>  */}
       <Navbar/>
       <Section/>
       <div className='doctorcontainer'>
