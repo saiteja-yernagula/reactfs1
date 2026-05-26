@@ -13,7 +13,8 @@ function Adddoctor() {
     function handleform(e){
         e.preventDefault()
         const formdata={
-          name,age,gender,specialization,salary
+          name,age,gender,specialization,salary,
+          id:Date.now()
         }
       setNewdoctor(formdata)
         console.log(formdata)

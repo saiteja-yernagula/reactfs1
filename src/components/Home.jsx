@@ -3,7 +3,7 @@ import { useState } from "react"
 import Doctorcard from "./Doctorcard"
 
 
-function Home() {
+function Home({newdoctor}) {
 
     let [doctors,setDoctors]=useState([])
 
@@ -40,10 +40,16 @@ function Home() {
     useEffect(()=>{
     fetchdata()
     },[])
+
+    useEffect(()=>{
+        if(newdoctor){
+            setDoctors((prev)=>[...prev,newdoctor])
+        }
+    },[newdoctor])
   return (
     <div  className='doctorcontainer'>
         {doctors.map((val)=>(
-            <Doctorcard name={val.name} gender={val.gender} specialization={val.specialization}/>
+            <Doctorcard key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         ))}
     </div>
   )
