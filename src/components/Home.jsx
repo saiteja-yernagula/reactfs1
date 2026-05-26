@@ -1,5 +1,6 @@
-import { useEffect } from "react"\
+import { useEffect } from "react"
 import { useState } from "react"
+import Doctorcard from "./Doctorcard"
 
 
 function Home() {
@@ -33,6 +34,7 @@ function Home() {
                     salary: 5000000
                 }
             ]
+            setDoctors(data)
         
 
      }
@@ -40,9 +42,10 @@ function Home() {
     fetchdata()
     },[])
   return (
-    <div>
-        home cards
-        
+    <div  className='doctorcontainer'>
+        {doctors.map((val)=>(
+            <Doctorcard name={val.name} gender={val.gender} specialization={val.specialization}/>
+        ))}
     </div>
   )
 }
