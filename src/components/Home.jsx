@@ -49,7 +49,17 @@ function Home({newdoctor}) {
         if(newdoctor){
             setDoctors((prev)=>[...prev,newdoctor])
         }
+        console.log(search,specialization)
+
     },[newdoctor])
+
+    const filterdata=doctors.filter((val)=>{
+        console.log()
+        return (val.name.toLowerCase().includes(search)
+        &&
+        (specialization=="" || specialization==val.specialization)
+    )
+    })
   return (
    <div>
     <div className='filters'>
@@ -64,7 +74,7 @@ function Home({newdoctor}) {
     </select>
     </div>
      <div  className='doctorcontainer'>
-        {doctors.length>0?doctors.map((val)=>(
+        {filterdata.length>0?filterdata.map((val)=>(
             <Doctorcard key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         )): <h2>no doctors found</h2>}
     </div>
