@@ -75,7 +75,7 @@ function Home({newdoctor}) {
     </div>
      <div  className='doctorcontainer'>
         {filterdata.length>0?filterdata.map((val)=>(
-            <Doctorcard key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
+            <Doctorcard id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         )): <h2>no doctors found</h2>}
     </div>
    </div>
