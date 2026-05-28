@@ -3,6 +3,7 @@ import Section from "./components/Section"
 
 import Doctorcard from "./components/Doctorcard"
 import Adddoctor from "./components/Adddoctor"
+import { Route, Router } from "react-router-dom"
 // import { useState } from "react"
 // import { useEffect } from "react"
 function App() {
@@ -21,9 +22,12 @@ function App() {
        {/* {count}
       <button  onClick={addcount}>click to increase</button>  */}
       <Navbar/>
-      <Section/>
+      <Router>
+        <Route path='/' element={<Section/>}/>
+        <Route path='/add-doctor' element={<Adddoctor/>}/>
+      </Router>
+      {/* <Section/> */}
       <div className='doctorcontainer'>
-
       <Doctorcard name='Vasavi' specialization='psychology' gender='female'/>
       <Doctorcard name='Vamsi' specialization='heart' gender='male'/>
       <Doctorcard name='Deja' specialization='muscles' gender='male'/>
@@ -31,7 +35,7 @@ function App() {
       <Doctorcard name='Deekshit' specialization='cardio' gender='male'/>
       
       </div>
-     <Adddoctor/>
+     {/* <Adddoctor/> */}
     </div>
   )
 }
