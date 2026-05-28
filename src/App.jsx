@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar"
 import Section from "./components/Section"
 
-import Doctorcard from "./components/Doctorcard"
 import Adddoctor from "./components/Adddoctor"
 import { Route, Routes } from "react-router-dom"
+import Doctordetails from "./components/Doctordetails"
 // import { useState } from "react"
 // import { useEffect } from "react"
 function App() {
@@ -25,16 +25,17 @@ function App() {
       <Routes>
         <Route path='/' element={<Section/>}/>
         <Route path='/add-doctor' element={<Adddoctor/>}/>
+        <Route path='/doctor/:id' element={<Doctordetails/>}/>
       </Routes>
       {/* <Section/> */}
-      <div className='doctorcontainer'>
+      {/* <div className='doctorcontainer'>
       <Doctorcard name='Vasavi' specialization='psychology' gender='female'/>
       <Doctorcard name='Vamsi' specialization='heart' gender='male'/>
       <Doctorcard name='Deja' specialization='muscles' gender='male'/>
       <Doctorcard name='Surya' specialization='ENT' gender='male'/>
       <Doctorcard name='Deekshit' specialization='cardio' gender='male'/>
       
-      </div>
+      </div> */}
      {/* <Adddoctor/> */}
     </div>
   )
