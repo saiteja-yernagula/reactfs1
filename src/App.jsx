@@ -4,6 +4,7 @@ import Section from "./components/Section"
 import Adddoctor from "./components/Adddoctor"
 import { Route, Routes } from "react-router-dom"
 import Doctordetails from "./components/Doctordetails"
+import Weather from "./components/Weather"
 // import { useState } from "react"
 // import { useEffect } from "react"
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <div>
        {/* {count}
       <button  onClick={addcount}>click to increase</button>  */}
+      <Weather/>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Section/>}/>
