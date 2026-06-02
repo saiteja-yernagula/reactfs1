@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Home from './Home'
+import axios from 'axios'
 
 function Adddoctor() {
     const [name,setName]=useState('')
@@ -10,12 +11,15 @@ function Adddoctor() {
 
     const [newdoctor,setNewdoctor]=useState(null)
 
-    function handleform(e){
+    async function handleform(e){
         e.preventDefault()
         const formdata={
           name,age,gender,specialization,salary,
           id:Date.now()
         }
+        await axios.post('https://doc-back.onrender.com/doctors/',formdata)
+        
+
       setNewdoctor(formdata)
         console.log(formdata)
         setName('')

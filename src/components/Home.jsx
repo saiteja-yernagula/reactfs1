@@ -22,10 +22,11 @@ function Home({newdoctor}) {
     },[])
 
     useEffect(()=>{
-        if(newdoctor){
-            setDoctors((prev)=>[...prev,newdoctor])
-        }
-        console.log(search,specialization)
+        // if(newdoctor){
+        //     setDoctors((prev)=>[...prev,newdoctor])
+        // }
+        // console.log(search,specialization)
+        fetchdata()
 
     },[newdoctor])
 
