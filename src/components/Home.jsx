@@ -42,6 +42,9 @@ function Home({newdoctor}) {
         await axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
         fetchdata()
     }
+    
+
+
   return (
    <div>
     <div className='filters'>
