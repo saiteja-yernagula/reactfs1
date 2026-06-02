@@ -37,8 +37,8 @@ function Adddoctor() {
         specialization:"Heart",
          salary:9000000
       }
-      await axios.put(`https://doc-back.onrender.com/doctors/${id}`,updateddata)
       setNewdoctor(null)
+      await axios.put(`https://doc-back.onrender.com/doctors/${id}`,updateddata)
     }
   return (
     <div>
@@ -67,7 +67,7 @@ function Adddoctor() {
         <button type='submit'>ADD</button>
     </form> 
 
-    <Home newdoctor={newdoctor}/>
+    <Home newdoctor={newdoctor} handleupdate={handleupdate}/>
     </div>
   )
 }

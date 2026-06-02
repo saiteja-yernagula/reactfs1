@@ -3,7 +3,7 @@ import { useState } from "react"
 import Doctorcard from "./Doctorcard"
 import axios from "axios"
 
-function Home({newdoctor}) {
+function Home({newdoctor,handleupdate}) {
 
     let [doctors,setDoctors]=useState([])
     let [search,setSearch]=useState('')
@@ -42,7 +42,7 @@ function Home({newdoctor}) {
         await axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
         fetchdata()
     }
-    
+
 
 
   return (
@@ -60,7 +60,7 @@ function Home({newdoctor}) {
     </div>
      <div  className='doctorcontainer'>
         {filterdata.length>0?filterdata.map((val)=>(
-            <Doctorcard deletedoctor={deletedoctor} id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
+            <Doctorcard handleupdate={handleupdate} deletedoctor={deletedoctor} id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         )): <h2>no doctors found</h2>}
     </div>
    </div>
