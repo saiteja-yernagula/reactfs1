@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import Doctorcard from "./Doctorcard"
-
+import axios from "axios"
 
 function Home({newdoctor}) {
 
@@ -13,7 +13,7 @@ function Home({newdoctor}) {
 
             let val=await fetch('https://doc-back.onrender.com/doctors')
             let finaldata=await val.json()
-         
+        
             setDoctors(finaldata)
 
      }
@@ -36,6 +36,11 @@ function Home({newdoctor}) {
         (specialization=="" || specialization==val.specialization)
     )
     })
+
+    async function deletedoctor(id){
+        await axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
+        fetchdata()
+    }
   return (
    <div>
     <div className='filters'>
@@ -51,7 +56,7 @@ function Home({newdoctor}) {
     </div>
      <div  className='doctorcontainer'>
         {filterdata.length>0?filterdata.map((val)=>(
-            <Doctorcard id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
+            <Doctorcard deletedoctor={deletedoctor} id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         )): <h2>no doctors found</h2>}
     </div>
    </div>
