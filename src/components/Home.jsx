@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useMemo } from "react"
 import { useState } from "react"
 import Doctorcard from "./Doctorcard"
 import axios from "axios"
@@ -11,10 +11,14 @@ function Home({newdoctor,handleupdate}) {
 
    async  function fetchdata(){
 
-            let val=await fetch('https://doc-back.onrender.com/doctors')
-            let finaldata=await val.json()
-        
-            setDoctors(finaldata)
+    try{
+        let val=await fetch('https://doc-back.onrender.com/doctors')
+        let finaldata=await val.json() 
+        setDoctors(finaldata)
+    }catch(err){
+        console.log(err)
+        console.log('unable to call an api')
+    }
 
      }
     useEffect(()=>{
@@ -30,13 +34,13 @@ function Home({newdoctor,handleupdate}) {
 
     },[newdoctor])
 
-    const filterdata=doctors.filter((val)=>{
-        console.log()
+    const filterdata=useMemo(()=>{
+        return doctors.filter((val)=>{
         return (val.name.toLowerCase().includes(search)
         &&
-        (specialization=="" || specialization==val.specialization)
-    )
-    })
+        (specialization=="" || specialization==val.specialization))
+        })
+    },[doctors,search,specialization])
 
     async function deletedoctor(id){
         await axios.delete(`https://doc-back.onrender.com/doctors/${id}`)

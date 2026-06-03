@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom"
 import Doctordetails from "./components/Doctordetails"
 // import Weather from "./components/Weather"
 import { useState } from "react"
+import ProtectedRoute from "./components/ProtectedRoute"
 // import { useEffect } from "react"
 function App() {
   const [islogin,setislogin]=useState(false)
@@ -40,8 +41,11 @@ function App() {
       <button onClick={()=>setislogin(true)}>click to login</button>
       <Routes>
         <Route path='/' element={<Section/>}/>
-        <Route path='/add-doctor' element={islogin?<Adddoctor/>:<h1>please login</h1>}/>
-        <Route path='/doctor/:id' element={<Doctordetails/>}/>
+        <Route path='/add-doctor' element={
+          <ProtectedRoute islogin={islogin}><Adddoctor/></ProtectedRoute>}/>
+        <Route path='/doctor/:id' element={
+          <ProtectedRoute islogin={islogin}><Doctordetails/></ProtectedRoute>
+        }/>
       </Routes>
       {/* <Section/> */}
       {/* <div className='doctorcontainer'>
