@@ -8,7 +8,9 @@ import Doctordetails from "./components/Doctordetails"
 import { useState } from "react"
 import ProtectedRoute from "./components/ProtectedRoute"
 // import { useEffect } from "react"
+import useCounter from "./components/useCounter"
 function App() {
+  const {count,increment,decrement}=useCounter(0)
   const [islogin,setislogin]=useState(false)
 
   // let [count,setCount]=useState(0)
@@ -22,6 +24,10 @@ function App() {
 
   return (
     <div>
+      {count}
+      <button onClick={increment}>inc</button>
+      <button onClick={decrement}>dnc</button>
+      
        {/* {count}
       <button  onClick={addcount}>click to increase</button>  */}
       {/* <Weather/> */}
