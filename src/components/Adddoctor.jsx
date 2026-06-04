@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import Home from './Home'
 import axios from 'axios'
+import { useContext } from 'react'
+import { DoctorContext } from './DoctorProvider'
 
 function Adddoctor() {
+     const {setNewdoctor}=useContext(DoctorContext)
     const [name,setName]=useState('')
     const [age,setAge]=useState('')
     const [gender,setGender]=useState('')

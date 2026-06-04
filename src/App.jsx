@@ -9,6 +9,7 @@ import { useState } from "react"
 import ProtectedRoute from "./components/ProtectedRoute"
 // import { useEffect } from "react"
 import useCounter from "./components/useCounter"
+import DoctorProvider from "./components/DoctorProvider"
 function App() {
   const {count,increment,decrement}=useCounter(0)
   const [islogin,setislogin]=useState(false)
@@ -48,7 +49,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Section/>}/>
         <Route path='/add-doctor' element={
-          <ProtectedRoute islogin={islogin}><Adddoctor/></ProtectedRoute>}/>
+          <ProtectedRoute islogin={islogin}>
+           <DoctorProvider> <Adddoctor/></DoctorProvider>
+            </ProtectedRoute>}/>
         <Route path='/doctor/:id' element={
           <ProtectedRoute islogin={islogin}><Doctordetails/></ProtectedRoute>
         }/>
