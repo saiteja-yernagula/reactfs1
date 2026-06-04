@@ -17,7 +17,9 @@ function DoctorProvider({children}) {
       setNewdoctor(null)
     }
   return (
-    
+    <DoctorContext.Provider value={newdoctor,setNewdoctor,handleupdate}>
+        {children}
+    </DoctorContext.Provider>
   )
 }
 
