@@ -2,8 +2,11 @@ import { useEffect, useMemo } from "react"
 import { useState } from "react"
 import Doctorcard from "./Doctorcard"
 import axios from "axios"
+import { useContext } from "react"
+import { DoctorContext } from "./DoctorProvider"
 
-function Home({newdoctor,handleupdate}) {
+function Home() {
+    const {newdoctor}=useContext(DoctorContext)
 
     let [doctors,setDoctors]=useState([])
     let [search,setSearch]=useState('')
@@ -64,7 +67,7 @@ function Home({newdoctor,handleupdate}) {
     </div>
      <div  className='doctorcontainer'>
         {filterdata.length>0?filterdata.map((val)=>(
-            <Doctorcard handleupdate={handleupdate} deletedoctor={deletedoctor} id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
+            <Doctorcard  deletedoctor={deletedoctor} id={val.id} key={val.id} name={val.name} gender={val.gender} specialization={val.specialization}/>
         )): <h2>no doctors found</h2>}
     </div>
    </div>

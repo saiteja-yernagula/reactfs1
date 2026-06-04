@@ -70,7 +70,7 @@ function Adddoctor() {
         <button type='submit'>ADD</button>
     </form> 
 
-    <Home newdoctor={newdoctor} handleupdate={handleupdate}/>
+    <Home />
     </div>
   )
 }

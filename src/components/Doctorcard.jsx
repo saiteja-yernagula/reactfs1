@@ -1,7 +1,10 @@
 import './styles.css'
 import { useNavigate } from 'react-router-dom'
-function Doctorcard({name,specialization,gender,id,deletedoctor,handleupdate}) {
+import { useContext } from 'react'
+import { DoctorContext } from './DoctorProvider'
+function Doctorcard({name,specialization,gender,id,deletedoctor}) {
   let navigate=useNavigate()
+  const {handleupdate}=useContext(DoctorContext)
   return (
     <div className='doctorcard'>
         <div>
