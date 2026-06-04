@@ -9,7 +9,7 @@ function Adddoctor() {
     const [specialization,setSpecialization]=useState('')
     const [salary,setSalary]=useState('')
 
-    const [newdoctor,setNewdoctor]=useState(null)
+    // const [newdoctor,setNewdoctor]=useState(null)
 
     async function handleform(e){
         e.preventDefault()
@@ -29,17 +29,17 @@ function Adddoctor() {
         setSalary('')
     }
 
-    async function handleupdate(id){
-      const updateddata={
-        name:'john',
-        age:24,
-        gender:'male',
-        specialization:"Heart",
-         salary:9000000
-      }
-      await axios.put(`https://doc-back.onrender.com/doctors/${id}`,updateddata)
-      setNewdoctor(null)
-    }
+    // async function handleupdate(id){
+    //   const updateddata={
+    //     name:'john',
+    //     age:24,
+    //     gender:'male',
+    //     specialization:"Heart",
+    //      salary:9000000
+    //   }
+    //   await axios.put(`https://doc-back.onrender.com/doctors/${id}`,updateddata)
+    //   setNewdoctor(null)
+    // }
   return (
     <div>
       <h1>Add doctor</h1>
